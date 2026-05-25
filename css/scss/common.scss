@@ -1,0 +1,25 @@
+// selection color
+::selection {
+    background: #0254A8;
+    color: white;
+}
+//Firefox
+::-moz-selection {
+    background: $mainColor;
+    color: white;
+}
+
+// bootstrap init
+p,ul,ol,li,hr {
+    margin: 0;
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    border-top: none;
+}
+
+// slick init 
+.slider {
+    overflow: hidden;
+}

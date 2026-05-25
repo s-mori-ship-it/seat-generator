@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+:root {
+  --font-lato: 'Lato', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-gothic: 'Noto Sans JP', sans-serif;
+  --font-ming: 'Noto Serif JP', serif;
+  --font-manrope: 'Manrope', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+*,
+html,
+body {
+  font-family: var(--font-gothic);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+html {
+  box-sizing: border-box;
+}
+html body {
+  margin: 0;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+html body h1 {
+  margin-top: 0;
+  font-size: 28px;
+}
+html body .controls {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 1rem;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  align-items: center;
+}
+html body .controls .field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+html body .controls .field label {
+  font-size: 14px;
+  font-weight: bold;
+}
+html body .controls .field input, html body .controls .field select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+html body .controls .field button {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+html body .controls .field button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+html body .controls .field .generate-btn {
+  background: #111827;
+  color: white;
+}
+html body .controls .field .pdf-btn {
+  background: #2563eb;
+  color: white;
+}
+html body .controls textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  resize: vertical;
+  font-size: 14px;
+}
+
+.page {
+  width: 190mm;
+  margin: 20mm auto;
+  display: grid;
+  grid-template-columns: 95mm 95mm;
+  grid-auto-rows: 45mm;
+  background: white;
+}
+
+.generate-btn {
+  background-color: #37b0e4;
+  color: #fff;
+  border: 2px solid #37b0e4;
+  padding: 0.5rem 0;
+  border-radius: 30px;
+}
+.generate-btn:hover {
+  background-color: #fff;
+  color: #37b0e4;
+}
+.generate-btn.pdf-btn {
+  background-color: #FA0F00;
+  border-color: #FA0F00;
+}
+.generate-btn.pdf-btn:hover {
+  background-color: #fff;
+  color: #FA0F00;
+}
+
+.seat-card {
+  border-top: 1px dashed #999;
+  border-left: 1px dashed #999;
+  border-right: 1px dashed #999;
+  border-bottom: 1px dashed #999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.row-label {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 2mm;
+}
+
+.number-wrap {
+  display: flex;
+  align-items: flex-end;
+  line-height: 1;
+}
+
+.seat-number {
+  font-size: 72px;
+  font-weight: 900;
+  line-height: 0.9;
+}
+
+.seat-suffix {
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 2px;
+  margin-bottom: 6px;
+}
+
+.pdf-mode {
+  margin-top: 20mm;
+}

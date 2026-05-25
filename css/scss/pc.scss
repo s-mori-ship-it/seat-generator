@@ -1,0 +1,151 @@
+@import "_fonts.scss";
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+*,
+html,
+body {
+    @include gothic();
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+html {
+    box-sizing: border-box;
+    body {
+        margin: 0;
+        padding: 24px;
+        font-family: Arial, sans-serif;
+        background: #f3f4f6;
+        color: #111827;
+        h1 {
+            margin-top: 0;
+            font-size: 28px;
+        }
+        .controls {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 1rem;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            align-items: center;
+            .field {
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+                label {
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+                input, select {
+                    padding: 10px;
+                    border-radius: 10px;
+                    border: 1px solid #d1d5db;
+                    font-size: 14px;
+                }
+                button {
+                    border: none;
+                    border-radius: 12px;
+                    padding: 12px 16px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    &:hover {
+                        opacity: 0.9;
+                        transform: translateY(-1px);
+                    }
+                }
+                .generate-btn {
+                    background: #111827;
+                    color: white;
+                }
+                .pdf-btn {
+                    background: #2563eb;
+                    color: white;
+                }
+            }
+            textarea {
+                width: 100%;
+                min-height: 120px;
+                padding: 10px;
+                border-radius: 10px;
+                border: 1px solid #d1d5db;
+                resize: vertical;
+                font-size: 14px;
+            }
+        }
+    }
+}
+.page {
+    width: 190mm;
+    margin: 20mm auto;
+    display: grid;
+    grid-template-columns: 95mm 95mm;
+    grid-auto-rows: 45mm;
+    background: white;
+}
+.generate-btn {
+    background-color: #37b0e4;
+    color: #fff;
+    border: 2px solid #37b0e4;
+    padding: .5rem 0;
+    border-radius: 30px;
+    &:hover {
+        background-color: #fff;
+        color: #37b0e4;
+    }
+    &.pdf-btn {
+        background-color: #FA0F00;
+        border-color: #FA0F00;
+        &:hover {
+            background-color: #fff;
+            color: #FA0F00;
+        }
+    }
+}
+.seat-card {
+    border-top: 1px dashed #999;
+    border-left: 1px dashed #999;
+    border-right: 1px dashed #999;
+    border-bottom: 1px dashed #999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+.row-label {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 2mm;
+}
+.number-wrap {
+    display: flex;
+    align-items: flex-end;
+    line-height: 1;
+}
+.seat-number {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 0.9;
+}
+.seat-suffix {
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 2px;
+    margin-bottom: 6px;
+}
+.pdf-mode {
+    margin-top: 20mm;
+}
+
