@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no">
+
+		<!-- jQuery（SlickはjQuery依存）-->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+
+		<!-- Slick JS -->
+		<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+		<!-- Slick CSS -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+		<!-- Optional Slick Theme -->
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+		<!-- css -->
+		<link rel="stylesheet" type="text/css" href="css/common.css">
+		<link rel="stylesheet" type="text/css" href="css/pc.css">
+		<link rel="stylesheet" type="text/css" href="css/tablet.css" media="screen and (min-width:640px) and (max-width:1160px)">
+		<link rel="stylesheet" type="text/css" href="css/sp.css" media="screen and (max-width:640px)">
+		<!-- Google マテリアルアイコン -->
+		<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone" rel="stylesheet">
+		<title>テンプレート</title>
+	</head>
+	<body>
+		<h1>席番ジェネレーター</h1>
+		<div class="controls">
+			<div class="field">
+				<label>開始列</label>
+				<input type="text" id="startRow" value="A-1" />
+			</div>
+
+			<div class="field">
+				<label>終了列</label>
+				<input type="text" id="endRow" value="A-2" />
+			</div>
+
+			<div class="field">
+				<label>開始番号</label>
+				<input type="number" id="startNum" value="1" />
+			</div>
+
+			<div class="field">
+				<label>終了番号</label>
+				<input type="number" id="endNum" value="12" />
+			</div>
+
+			<div class="field">
+				<label>色</label>
+				<select id="colorSelect">
+					<option value="#111827">黒</option>
+					<option value="#dc2626">赤</option>
+					<option value="#2563eb">青</option>
+					<option value="#16a34a">緑</option>
+					<option value="#9333ea">紫</option>
+				</select>
+			</div>
+
+			<div class="field">
+				<label>CSV読み込み</label>
+				<input type="file" id="csvFile" accept=".csv" />
+			</div>
+
+			<div class="field">
+				<label>
+					<input type="checkbox" id="reprintMode" />
+					再印刷モード
+				</label>
+			</div>
+
+			<div class="field">
+				<label>再印刷席</label>
+
+				<textarea
+					id="reprintSeats"
+					placeholder="A-1,3&#10;A-1,7&#10;B-2,12"
+				></textarea>
+			</div>
+
+			<div class="field">
+				<label>列サイズ</label>
+				<input
+					type="number"
+					id="rowFontSize"
+					value="22"
+				/>
+			</div>
+
+			<div class="field">
+				<label>番号サイズ</label>
+				<input
+					type="number"
+					id="seatFontSize"
+					value="72"
+				/>
+			</div>
+
+			<div class="field">
+				<label>番サイズ</label>
+				<input
+					type="number"
+					id="suffixFontSize"
+					value="28"
+				/>
+			</div>
+
+			<button class="generate-btn" onclick="generateSeats()">
+				席番生成
+			</button>
+
+			<button class="generate-btn pdf-btn" onclick="downloadPDF()">
+				PDF出力
+			</button>
+
+		</div>
+
+		<div id="pages"></div>
+		<!-- Java Script -->
+		<script type="text/javascript" src="lib/js/main.js"></script>
+	</body>
+ </html>
